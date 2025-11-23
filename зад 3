@@ -1,0 +1,37 @@
+using System;
+public class Food
+{
+    
+    public virtual void Eat()
+    {
+        Console.WriteLine("Едим...");
+    }
+}
+
+public class Pizza : Food
+{
+    public override void Eat()
+    {
+        Console.WriteLine("Едим пиццу!");
+    }
+}
+public class Burger : Food
+{
+    public override void Eat()
+    {
+        Console.WriteLine("Едим бургер!");
+    }
+}
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        Food[] lunch = { new Pizza(), new Burger(), new Food() };
+
+    
+        foreach (var food in lunch)
+        {
+            food.Eat();
+        }
+    }
+}
