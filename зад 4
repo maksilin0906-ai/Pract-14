@@ -1,0 +1,43 @@
+using System;
+
+
+public abstract class Shape
+{
+    public abstract string Draw();
+}
+public class Circle : Shape, ICircle
+{
+
+    public override string Draw()
+    {
+        return "Рисую круг";
+    }
+}
+
+
+public class Triangle : Shape
+{
+    
+    public override string Draw()
+    {
+        return "Рисую треугольник";
+    }
+}
+class Program
+{
+    public Program()
+    {
+    }
+
+    static void Main(string[] args)
+    {
+        
+        Shape[] shapes = { new Circle(), new Triangle() };
+
+        
+        foreach (var shape in shapes)
+        {
+            Console.WriteLine(shape.Draw());
+        }
+    }
+}
